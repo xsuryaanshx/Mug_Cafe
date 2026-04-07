@@ -1,23 +1,45 @@
 body {
-font-family: sans-serif;
-background: #0f0f0f;
+font-family: 'Inter', sans-serif;
+background: #0a0a0a;
 color: white;
+overflow-x: hidden;
 }
 
-/* smooth reveal */
+h1,h2,h3 {
+font-family: 'Playfair Display', serif;
+}
+
+/* reveal animation */
 .reveal {
 opacity: 0;
-transform: translateY(40px);
-transition: all 0.8s ease;
+transform: translateY(60px);
+transition: all 1s cubic-bezier(0.2,0.9,0.3,1);
 }
-
 .reveal.active {
 opacity: 1;
 transform: translateY(0);
 }
 
-/* hover effects */
+/* glass */
+.glass {
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(16px);
+border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* hover depth */
+.card {
+transition: all 0.4s ease;
+}
 .card:hover {
-transform: scale(1.05);
-transition: 0.3s;
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* image zoom */
+.img-zoom {
+transition: transform 0.7s ease;
+}
+.img-zoom:hover {
+transform: scale(1.1);
 }
