@@ -1,0 +1,23 @@
+body {
+font-family: sans-serif;
+background: #0f0f0f;
+color: white;
+}
+
+/* smooth reveal */
+.reveal {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.8s ease;
+}
+
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* hover effects */
+.card:hover {
+transform: scale(1.05);
+transition: 0.3s;
+}
