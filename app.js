@@ -1,4 +1,4 @@
-const { useEffect } = React;
+const { useEffect, useState } = React;
 
 const useReveal = () => {
 useEffect(() => {
@@ -12,22 +12,64 @@ document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 },[]);
 };
 
+// ☕ Coffee Loader Animation
+const Loader = () => {
+const [loading, setLoading] = useState(true);
+
+useEffect(()=>{
+setTimeout(()=>setLoading(false), 2000);
+},[]);
+
+if(!loading) return null;
+
+return (
+<div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+<div className="text-center">
+
+<div className="text-6xl animate-spin-slow">☕</div>
+
+<p className="mt-4 text-gray-300 tracking-widest">Mug Café</p>
+</div>
+</div>
+);
+};
+
+const Navbar = () => (
+<div className="fixed top-0 w-full flex justify-between items-center px-8 py-4 z-40 backdrop-blur-md bg-black/30 border-b border-white/10">
+
+<div className="flex items-center gap-3">
+<img src="logo.jpg" className="w-10 h-10 rounded-full"/>
+<span className="text-lg tracking-wide">Mug Café</span>
+</div>
+
+<a href="https://wa.me/393311386374?text=Vorrei prenotare un tavolo"
+className="px-5 py-2 rounded-full bg-white text-black text-sm">
+Prenota
+</a>
+
+</div>
+);
+
 const Hero = () => (
 <section className="h-screen flex items-center justify-center text-center relative overflow-hidden">
 
 <img src="https://images.unsplash.com/photo-1514361892635-cebb9c0e6f0c"
 className="absolute w-full h-full object-cover scale-110"/>
 
-<div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/90"></div>
+<div className="absolute inset-0 bg-black/70"></div>
 
 <div className="relative reveal">
-<h1 className="text-7xl md:text-8xl mb-6 tracking-tight">Mug Café</h1>
-<p className="text-xl text-gray-300 mb-8">Caffè • Cocktail • Aperitivo</p>
+
+<img src="logo.jpg" className="w-24 h-24 mx-auto mb-6 rounded-full shadow-2xl"/>
+
+<h1 className="text-7xl mb-4 tracking-tight">Mug Café</h1>
+<p className="text-lg text-gray-300 mb-8">Caffè • Cocktail • Aperitivo</p>
 
 <a href="https://wa.me/393311386374?text=Vorrei prenotare un tavolo"
 className="glass px-8 py-3 rounded-full hover:bg-white/10 transition">
 Prenota un Tavolo
 </a>
+
 </div>
 
 </section>
@@ -102,6 +144,8 @@ width="100%" height="350"></iframe>
 
 const App = () => (
 <>
+<Loader/>
+<Navbar/>
 <Hero/>
 <Gallery/>
 <Menu/>
