@@ -7,161 +7,16 @@
 <title>Mug Café — Cassino</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-<style>
-body {font-family: 'Poppins', sans-serif; background:#0f0f0f; color:white;}
-</style>
 </head>
 
 <body>
 <div id="root"></div>
 
-<!-- FIXED FRAMER MOTION -->
-<script type="module">
-import * as Motion from "https://esm.sh/framer-motion@11.0.2";
-window.motion = Motion.motion;
-</script>
-
-<script type="text/babel">
-
-const motion = window.motion;
-
-const Hero = () => (
-<section className="h-screen flex items-center justify-center text-center relative overflow-hidden">
-
-<img src="https://images.unsplash.com/photo-1514361892635-cebb9c0e6f0c"
-className="absolute w-full h-full object-cover"/>
-
-<div className="absolute inset-0 bg-black/60"></div>
-
-<motion.div
-initial={{opacity:0, y:40}}
-animate={{opacity:1, y:0}}
-transition={{duration:1}}
-className="relative"
->
-<h1 className="text-6xl font-bold mb-4">Mug Café</h1>
-<p className="text-xl mb-6">Caffè • Cocktail • Aperitivo</p>
-
-<a href="https://wa.me/393311386374?text=Vorrei prenotare un tavolo"
-className="bg-white text-black px-6 py-3 rounded-full">
-Prenota un Tavolo
-</a>
-</motion.div>
-
-</section>
-);
-
-const Gallery = () => (
-<section className="py-20 text-center">
-<motion.h2 initial={{opacity:0}} whileInView={{opacity:1}} className="text-4xl mb-10">
-Il Nostro Ambiente
-</motion.h2>
-
-<div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-{[
-"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
-"https://images.unsplash.com/photo-1511920170033-f8396924c348",
-"https://images.unsplash.com/photo-1554118811-1e0d58224f24"
-].map((img,i)=>(
-<motion.img
-key={i}
-src={img}
-className="rounded-xl"
-whileHover={{scale:1.05}}
-initial={{opacity:0, y:40}}
-whileInView={{opacity:1, y:0}}
-transition={{delay:i*0.2}}
-/>
-))}
-</div>
-</section>
-);
-
-const Menu = () => (
-<section className="py-20 bg-black text-center">
-<h2 className="text-4xl mb-10">Menu</h2>
-
-<div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-{[
-["Espresso","€1.50"],
-["Cappuccino","€2.00"],
-["Cocktail","€6.00"],
-["Aperitivo","€8.00"],
-["Panini","€5.00"]
-].map((item,i)=>(
-<motion.div
-key={i}
-className="p-6 bg-white/10 rounded-xl"
-whileHover={{scale:1.05}}
-initial={{opacity:0, y:40}}
-whileInView={{opacity:1, y:0}}
-transition={{delay:i*0.1}}
->
-<h3 className="font-semibold">{item[0]}</h3>
-<p>{item[1]}</p>
-</motion.div>
-))}
-</div>
-</section>
-);
-
-const Reviews = () => (
-<section className="py-20 text-center">
-<h2 className="text-4xl mb-6">Recensioni</h2>
-
-<motion.p initial={{opacity:0}} whileInView={{opacity:1}} className="max-w-xl mx-auto">
-⭐ 4.5 su Google Maps — atmosfera giovane e ottimi cocktail.
-</motion.p>
-
-<div className="mt-6">
-<a href="https://maps.app.goo.gl/ATvfg1ctk12yHoC59"
-className="bg-white text-black px-6 py-3 rounded-full">
-Lascia una Recensione
-</a>
-</div>
-</section>
-);
-
-const Contact = () => (
-<section className="py-20 text-center bg-black">
-<h2 className="text-4xl mb-6">Contatti</h2>
-
-<p>Corso della Repubblica, 212</p>
-<p>Cassino (FR)</p>
-<p className="mt-2">+39 331 138 6374</p>
-
-<p className="mt-4 text-sm text-gray-400">
-Lun–Gio: 04:00–22:00 | Ven–Sab: 04:00–00:00 | Dom: Chiuso
-</p>
-
-<div className="mt-6">
-<iframe 
-src="https://www.google.com/maps?q=Corso+della+Repubblica+212+Cassino&output=embed"
-width="100%" height="300"></iframe>
-</div>
-</section>
-);
-
-const App = () => (
-<>
-<Hero/>
-<Gallery/>
-<Menu/>
-<Reviews/>
-<Contact/>
-</>
-);
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
-
-</script>
-
+<script type="text/babel" src="app.js"></script>
 </body>
 </html>
