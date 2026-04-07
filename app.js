@@ -66,6 +66,37 @@ Prenota un Tavolo
 );
 };
 
+const WhySection = () => {
+useReveal();
+
+return (
+<section className="py-32 text-center bg-gradient-to-b from-black to-zinc-900">
+
+<h2 className="text-5xl mb-12 reveal">Perché Mug Café</h2>
+
+<div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+
+<div className="glass card p-8 reveal">
+<h3>⭐ Ottime Recensioni</h3>
+<p className="text-gray-300">Clienti soddisfatti e ambiente accogliente</p>
+</div>
+
+<div className="glass card p-8 reveal">
+<h3>🍸 Cocktail & Aperitivo</h3>
+<p className="text-gray-300">Perfetto per serate e relax</p>
+</div>
+
+<div className="glass card p-8 reveal">
+<h3>📍 Posizione Centrale</h3>
+<p className="text-gray-300">Nel cuore di Cassino</p>
+</div>
+
+</div>
+
+</section>
+);
+};
+
 const Gallery = () => {
 useReveal();
 
@@ -111,6 +142,23 @@ return (
 );
 };
 
+const CTA = () => (
+<section className="py-32 text-center bg-black">
+
+<h2 className="text-5xl mb-6">Prenota il tuo tavolo</h2>
+
+<p className="text-gray-400 mb-8">
+Scrivici su WhatsApp e riserviamo subito il tuo posto
+</p>
+
+<a href="https://wa.me/393311386374"
+className="glass px-10 py-4 rounded-full hover:bg-white/10">
+Prenota Ora
+</a>
+
+</section>
+);
+
 const Contact = () => {
 useReveal();
 
@@ -131,8 +179,10 @@ const App = () => (
 <>
 <Navbar/>
 <Hero/>
+<WhySection/>
 <Gallery/>
 <Menu/>
+<CTA/>
 <Contact/>
 </>
 );
