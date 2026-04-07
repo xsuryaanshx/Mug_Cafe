@@ -22,20 +22,21 @@ body {font-family: 'Poppins', sans-serif; background:#0f0f0f; color:white;}
 <body>
 <div id="root"></div>
 
+<!-- FIXED FRAMER MOTION -->
 <script type="module">
-import { motion } from "https://esm.sh/framer-motion@11.0.2";
-window.motion = motion;
+import * as Motion from "https://esm.sh/framer-motion@11.0.2";
+window.motion = Motion.motion;
 </script>
 
 <script type="text/babel">
 
-const { motion } = window.motion;
+const motion = window.motion;
 
 const Hero = () => (
 <section className="h-screen flex items-center justify-center text-center relative overflow-hidden">
 
 <img src="https://images.unsplash.com/photo-1514361892635-cebb9c0e6f0c"
-className="absolute w-full h-full object-cover scale-110"/>
+className="absolute w-full h-full object-cover"/>
 
 <div className="absolute inset-0 bg-black/60"></div>
 
@@ -59,10 +60,7 @@ Prenota un Tavolo
 
 const Gallery = () => (
 <section className="py-20 text-center">
-<motion.h2 
-initial={{opacity:0}} whileInView={{opacity:1}} 
-className="text-4xl mb-10"
->
+<motion.h2 initial={{opacity:0}} whileInView={{opacity:1}} className="text-4xl mb-10">
 Il Nostro Ambiente
 </motion.h2>
 
@@ -70,7 +68,7 @@ Il Nostro Ambiente
 {[
 "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
 "https://images.unsplash.com/photo-1511920170033-f8396924c348",
-"https://images.unsplash.com/photo-1514361892635-cebb9c0e6f0c"
+"https://images.unsplash.com/photo-1554118811-1e0d58224f24"
 ].map((img,i)=>(
 <motion.img
 key={i}
@@ -118,11 +116,7 @@ const Reviews = () => (
 <section className="py-20 text-center">
 <h2 className="text-4xl mb-6">Recensioni</h2>
 
-<motion.p
-initial={{opacity:0}}
-whileInView={{opacity:1}}
-className="max-w-xl mx-auto"
->
+<motion.p initial={{opacity:0}} whileInView={{opacity:1}} className="max-w-xl mx-auto">
 ⭐ 4.5 su Google Maps — atmosfera giovane e ottimi cocktail.
 </motion.p>
 
